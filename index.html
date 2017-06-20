@@ -4,12 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mojo</title>
+	<link type="image/png" href="assets/MOJO-favicon.png" rel="icon">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800|Source+Sans+Pro:400,700,800" rel="stylesheet">
-	<link rel="stylesheet" href="css/icofont.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./css/icofont.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
 
+<body>
 	<header>
 		<div class="hero">
 			<nav class="header-slider">
@@ -20,23 +22,24 @@
 			</nav>
 			<div class="wrapper header-flex">
 				<nav class="header-nav">
-					<input type="checkbox" id="menu-toggle">
 					<div class="logo-box">
 						<div class="logo">
 							<p class="mojo-m">M</p><!--Monserrat M-->
 						</div>
 						<h1>Mojo</h1>
 					</div><!--logo box-->
-					<label for="menu-toggle" class="label-toggle"></label>
-						
 					<ul class="menu">
-						<li class="menu__link menu__link--highlight"><a href="#">Home</a></li>
-						<li class="menu__link"><a href="#">About Us</a></li>
-						<li class="menu__link"><a href="#">Services</a></li>
-						<li class="menu__link"><a href="#">Projects</a></li>
-						<li class="menu__link"><a href="#">Team</a></li>
-						<li class="menu__link"><a href="#">Testimonials</a></li>
-						<li class="menu__link"><a href="#">Contact</a></li>
+						<p class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></p>
+						<ul>
+							<li class="menu__link menu__link--highlight"><a href="#">Home</a></li>
+							<li class="menu__link"><a href="#">About Us</a></li>
+							<li class="menu__link"><a href="#">Services</a></li>
+							<li class="menu__link"><a href="#">Projects</a></li>
+							<li class="menu__link"><a href="#">Team</a></li>
+							<li class="menu__link"><a href="#">Testimonials</a></li>
+							<li class="menu__link"><a href="#">Contact</a></li>
+							
+						</ul>
 					</ul>
 				</nav>
 				<section class="header-info">
@@ -47,7 +50,6 @@
 			</div><!--wrapper-->
 		</div><!--hero-->
 	</header>
-
 
 	<main>
 		<section class="feature">
@@ -216,7 +218,7 @@
 					<h3>What We Did</h3>
 					<h2>Our Successful Projects</h2>
 				</section>
-				<ul class="menu project-menu">
+				<ul class="project-menu">
 					<li class="menu__link menu__link--active"><a href="#">All</a></li>
 					<li class="menu__link"><a href="#">Web Design</a></li>
 					<li class="menu__link"><a href="#">Photography</a></li>
@@ -305,7 +307,7 @@
 						<h3>Our Experts</h3>
 						<h2>Meet Our Team</h2>
 				</section>
-				<ul class="gallery">
+				<ul class="staff-gallery">
 					<li class="gallery__cell gallery__cell--portrait">
 						<figure>
 							<img src="assets/mojo-staff01.jpg" alt="Mandy Moore">
@@ -440,5 +442,20 @@
 		</ul>
 	</footer>
 	<script src="https://use.fontawesome.com/c44b7b1f6f.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		// write a document ready
+		// write a function that listens to a click on the hamburger menu
+		$(document).ready(function(){
+		   	$('.hamburger').on('click', function(){
+		   		// toggle class overlay on the menu
+		   		$('.menu').toggleClass('overlay');
+
+		   		// toggle class show on the ul inside of the menu
+		   		$('.menu ul').toggleClass('show');
+		   	})
+		});
+
+	</script>
 </body>
 </html>

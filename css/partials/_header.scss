@@ -54,20 +54,20 @@ nav.header-slider{
 		text-transform: uppercase;
 		.logo{
 		background-color: $boldColor;
-		width:30px;
-		height:30px;
+		width:35px;
+		height:35px;
 		margin-right:10px;
 		border-radius: 50%;
 		text-align: center;
-		padding-top:.4rem;
-		padding-left:.4rem;
+		padding-top:4px;
+		padding-left:4px;
 		}
 	}
 }
 
 // MAIN MENU
 
-nav.header-nav ul.menu{
+.menu ul{
 	display: flex;
 	flex-direction:row;
 	align-items: center;
@@ -80,52 +80,100 @@ nav.header-nav ul.menu{
 			flex: 1 0 calc(100% / 8);
 			text-align: center;
 			padding-left: 30px;
-		
-	}
-	}
-}
-
-#menu-toggle {display: none;}
-
-.label-toggle {display: none;}
-
-@media screen and (max-width: 940px){
-	.logo-box{padding-right:20px;}
-
-
-	nav.header-nav ul.menu{
-		display: block;
-		position:absolute;
-		z-index:1;
-		height: 0;
-		list-style-type: none;
-		opacity: 0;
-		text-align: center;
-		transition: all .2s ease;
-		width: 100%;
-		visibility: hidden;
-		text-align: right;
-		li.menu__link{
-			display:block;
-			padding-top: 0;
-
 		}
 	}
-
-	#menu-toggle:checked ~ ul {
-	      opacity: 1;
-	      visibility: visible;
-	    }
-
-	.label-toggle {
-      background: linear-gradient(to bottom, $contrastColor 0%, $contrastColor 20%, transparent 20%, transparent 40%, $contrastColor 40%, $contrastColor 60%, transparent 60%, transparent 80%, $contrastColor 80%, $contrastColor 100%);
-		cursor: pointer;
-		display: block;
-		float: right;
-		height: 20px;
-		margin-top: 0;
-		width: 50px;}
 }
+
+.overlay.menu {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.99);
+	color: white;
+}
+
+.overlay ul {
+	flex-direction: column;
+}
+.overlay ul a {
+	font-size: 3rem;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+}
+
+.overlay .hamburger {
+	display: block;
+	font-size: 3rem;
+	text-align: center;
+}
+
+.hamburger {
+	display: none;
+}
+
+
+/* Media Query */
+@media all and (max-width: 940px) {
+	.hamburger {
+		display: block;
+		color:#fff;
+	}
+
+	.menu ul {
+		display: none;
+	}
+	
+	.menu ul.show {
+		display: flex;
+	}
+
+}
+
+// #menu-toggle {display: none;}
+
+// .label-toggle {display: none;}
+
+// @media screen and (max-width: 940px){
+// 	.logo-box{padding-right:20px;}
+
+
+// 	nav.header-nav ul.menu{
+// 		display: block;
+// 		position:absolute;
+// 		z-index:1;
+// 		height: 0;
+// 		list-style-type: none;
+// 		opacity: 0;
+// 		text-align: center;
+// 		transition: all .2s ease;
+// 		width: 100%;
+// 		visibility: hidden;
+// 		text-align: right;
+// 		li.menu__link{
+// 			display:block;
+// 			padding-top: 0;
+
+// 		}
+// 	}
+
+// 	#menu-toggle:checked ~ ul {
+// 	      opacity: 1;
+// 	      visibility: visible;
+// 	    }
+
+// 	.label-toggle {
+//       background: linear-gradient(to bottom, $contrastColor 0%, $contrastColor 20%, transparent 20%, transparent 40%, $contrastColor 40%, $contrastColor 60%, transparent 60%, transparent 80%, $contrastColor 80%, $contrastColor 100%);
+// 		cursor: pointer;
+// 		display: block;
+// 		float: right;
+// 		height: 20px;
+// 		margin-top: 0;
+// 		width: 50px;}
+// }
 
 
 

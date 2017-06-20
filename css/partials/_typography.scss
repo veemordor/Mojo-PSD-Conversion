@@ -24,7 +24,7 @@
 }
 
 @mixin menu-style($font-color, $font-weight){
-	font-size:1rem;
+	font-size:1.2rem;
 	color:$font-color;
 	font-family: $titleFont;
 	text-transform: uppercase;
@@ -117,14 +117,28 @@ q{
 
 // links
 
-.header-nav ul.menu a {@include menu-style($contrastColor, 400);position:relative;transition: all .5s ease;}
-.header-nav ul.menu a:hover{@include menu-style($boldColor, 400);}
+.menu ul a {
+	@include menu-style($contrastColor, 400);position:relative;transition: all .5s ease;
+	@include fontSizer(9);
+}
+ul.menu ul a:hover{
+	@include menu-style($paleColor, 400);
+	@include fontSizer(35);
+}
+
+p.hamburger i{
+	@include fontSizer(50);
+	text-align: center;
+}
 
 
-ul.menu.project-menu a {
+.project-menu a {
 	@include menu-style($bodyFontColor, 700);
 	@media (max-width: 940px) {
-		@include fontSizer(16)
+		@include fontSizer(10);
+	}
+	@media (max-width: 480px){
+		@include fontSizer(12);
 	}
 }	
 	
@@ -132,7 +146,7 @@ ul.menu.project-menu a {
 ul.menu.project-menu a:hover{
 	@include menu-style($boldColor, 700);
 	@media (max-width: 940px) {
-		@include fontSizer(16)
+		@include fontSizer(12)
 	}
 }
 
