@@ -1,0 +1,143 @@
+section.project{
+	width: 100%;
+	ul.menu.project-menu{
+		margin: auto;
+		width: 50%;
+		justify-content:space-around;
+	}
+}
+
+ul.menu.project-menu{
+	display: flex;
+	flex-direction:row;
+	align-items: center;
+	justify-content: space-between;
+	@media (max-width: 940px) {
+		display: flex;
+		flex-direction:column;
+		align-items: center;
+		justify-content: space-between;}
+		li.menu__link a, li.menu__link.menu__link--active a{
+			flex: 1 0 calc(100% / 8);
+			text-align: center;
+			padding-left: 30px;
+			@media (max-width: 940px) {
+				padding: 10% 0;
+			}
+		}
+}
+
+
+ul.gallery{
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+	flex-wrap:wrap;
+	padding-top:45px;}
+	li.gallery__cell.gallery__cell--square{
+		width: calc(100% / 3 - 4.5rem);
+		margin-right:4.5rem;
+		margin-bottom:4.5rem;
+		&:nth-child(3n+3){
+			margin-right:0;	
+		}
+	}
+	
+	@media (max-width: 940px){
+		ul.gallery{
+			display: flex;
+			flex-direction:row;
+			justify-content:space-between;
+			align-items:center;
+			flex-wrap:wrap;
+			padding-top:45px;}
+			li.gallery__cell.gallery__cell--square{
+				width: calc(100% / 2 - 4.5rem);
+				margin-right:0;
+				margin-bottom:4.5rem;
+			
+				}
+			}
+	@media (max-width: 768px){
+		ul.gallery{
+			display: flex;
+			flex-direction:column;
+			align-items:center;
+			flex-wrap:wrap;
+			padding-top:45px;}
+			li.gallery__cell.gallery__cell--square{
+				width: 350px;
+				margin-right:0;
+				margin-bottom:4.5rem;
+				}
+			}
+
+figure{
+	position:relative;
+	&:hover figcaption{
+		display: block;
+		opacity: 1;
+		box-shadow: -5px 5px 5px $backgroundColor;
+		display: flex;
+		flex-direction:column;
+		justify-content:center;
+		
+		}
+	}
+
+	figcaption{
+		background: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		display: flex;
+		flex-direction:column;
+		justify-content:center;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: all 0.5s;
+		text-align: center;
+		opacity: 0;
+		p{padding-bottom: 30px;}
+	}
+		
+
+		
+	
+
+
+
+
+
+// STAFF 
+
+section.staff{
+	background: $paleColor;
+	width: 100%;
+	padding-bottom: 120px;
+}
+
+ul.gallery{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;}
+	li.gallery__cell.gallery__cell--portrait{
+		width: calc(100% / 3 - 3rem);
+		margin-right:3rem;
+		&:nth-child(3n+3){
+			margin-right:0;
+		}
+	}
+
+	@media (max-width: 940px){
+		ul.gallery{
+			display: flex;
+			flex-direction:column;
+			flex-wrap:wrap;}
+			li.gallery__cell.gallery__cell--portrait{
+				width: 345px;
+				margin-bottom:30px;
+				}
+			}
+	
+

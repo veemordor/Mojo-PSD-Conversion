@@ -1,0 +1,18 @@
+section.testimonial{
+	width: 100%;
+	margin:10rem auto;
+	text-align: center;
+}
+.testimonial-content{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	i.icofont.icofont-quote-left{
+		display: block;
+		color:#e1e1e1;
+		@include fontSizer(55);
+		margin-bottom: 6.5rem;}
+	q{margin-bottom: 3.5rem;}
+	blockquote{margin-bottom: 5.5rem;}
+	h5,p{@include special-style($boldColor);}
+}

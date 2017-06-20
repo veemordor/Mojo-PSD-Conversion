@@ -1,0 +1,74 @@
+@import 'partials/global';
+@import 'partials/setup';
+@import 'partials/variables';
+@import 'partials/typography';
+@import 'partials/icofont';
+@import 'partials/header';
+@import 'partials/feature';
+@import 'partials/about';
+@import 'partials/services';
+@import 'partials/stats';
+@import 'partials/galleries';
+@import 'partials/contact';
+@import 'partials/testimonial';
+@import 'partials/footer';
+
+// GLOBAL
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: $bodyFont;
+	color: $bodyFontColor;
+}
+
+.wrapper{
+	max-width: 1170px;
+	width:80%;
+	margin: 0 auto;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+// MAIN
+
+section.headline{
+	padding-top: 10rem;
+	padding-bottom: 7rem;
+	text-align: center;
+	h2{
+		position: relative;
+		padding-top: 1rem;
+	}
+	h2:after{
+		position: absolute;
+		content: '';
+		width: 130px;
+		height: 1px;
+		top:50px;
+		left:50%;
+		transform:translateX(-50%);
+		background-color:$bodyFontColor;
+		@media (max-width: 480px){
+			display: none;
+		}
+	}
+}
+
+

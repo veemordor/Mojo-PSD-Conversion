@@ -1,0 +1,131 @@
+.hero{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.1)), url(../assets/mojo-hero.jpg);
+	background-size: cover;
+}
+
+.header-flex{
+	display: flex;
+	flex-direction:column;
+	justify-content:space-between;
+	height: 100vh;
+	.header-info{
+		margin: auto;
+		text-align:center;
+		h2{
+			padding-top:1rem;
+		}
+		}
+}
+
+nav.header-slider{
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	margin:auto;
+	position: relative;
+	top:50%;
+	ul.header-slider_block{
+		display: flex;
+		flex-direction:row;
+		justify-content:space-between;
+		li.header-slider_block--item a{
+			display: inline-block;
+			background-color: rgba(255, 255, 255, 0.1);
+			color:$boldColor;
+			margin: 0 auto;
+			padding: 20%;
+			@media (max-width: 480px){
+				padding: 10%;
+			}
+		}
+	}
+}
+
+.header-nav{
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+	padding: 0;
+	.logo-box{
+		display: flex;
+		text-transform: uppercase;
+		.logo{
+		background-color: $boldColor;
+		width:30px;
+		height:30px;
+		margin-right:10px;
+		border-radius: 50%;
+		text-align: center;
+		padding-top:.4rem;
+		padding-left:.4rem;
+		}
+	}
+}
+
+// MAIN MENU
+
+nav.header-nav ul.menu{
+	display: flex;
+	flex-direction:row;
+	align-items: center;
+	justify-content: space-between;
+		li.menu__link{
+			display: flex;
+			flex-direction:row;
+			padding-left: 30px;
+			li.menu__link a{
+			flex: 1 0 calc(100% / 8);
+			text-align: center;
+			padding-left: 30px;
+		
+	}
+	}
+}
+
+#menu-toggle {display: none;}
+
+.label-toggle {display: none;}
+
+@media screen and (max-width: 940px){
+	.logo-box{padding-right:20px;}
+
+
+	nav.header-nav ul.menu{
+		display: block;
+		position:absolute;
+		z-index:1;
+		height: 0;
+		list-style-type: none;
+		opacity: 0;
+		text-align: center;
+		transition: all .2s ease;
+		width: 100%;
+		visibility: hidden;
+		text-align: right;
+		li.menu__link{
+			display:block;
+			padding-top: 0;
+
+		}
+	}
+
+	#menu-toggle:checked ~ ul {
+	      opacity: 1;
+	      visibility: visible;
+	    }
+
+	.label-toggle {
+      background: linear-gradient(to bottom, $contrastColor 0%, $contrastColor 20%, transparent 20%, transparent 40%, $contrastColor 40%, $contrastColor 60%, transparent 60%, transparent 80%, $contrastColor 80%, $contrastColor 100%);
+		cursor: pointer;
+		display: block;
+		float: right;
+		height: 20px;
+		margin-top: 0;
+		width: 50px;}
+}
+
+
+

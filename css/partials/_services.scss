@@ -1,0 +1,75 @@
+section.services-header{
+	width: 100%;
+	padding:10rem auto;
+	background: $paleColor url(../assets/mojo-dots.png) top right repeat-y fixed;
+}
+
+section.services{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	@media (max-width: 940px) {
+		display: flex;
+		flex-direction:column;
+		flex-wrap:wrap;
+	}
+	.services-image, .services-info {
+		width: 50%;
+		display: flex;
+		flex-wrap:wrap;
+		align-items:center;
+		@media (max-width: 940px) {
+			width: 100%;
+		}}
+		.ordering.order{
+			display: flex;
+			flex-direction:row;
+			flex-wrap:wrap;
+			@media (max-width: 940px) {
+				display: flex;
+				flex-direction:column-reverse;
+				flex-wrap:wrap;
+			}
+		}
+		.services-info__item{
+		display: flex;
+		flex-direction:column;
+		justify-content:space-between;
+		padding:0 12%;}
+		.services-info__item--header{
+			display: flex;
+			flex-direction:row;
+			h4{
+				position: relative;
+				padding-bottom:0;
+				padding-top:1rem;
+				margin-left: 10px;
+			}
+			h4:after{
+				content: '';
+				position: absolute;
+				width: 50px;
+				height: 1px;
+				top:3.5rem;
+				left:0;
+				background-color:$boldColor;
+			}
+		}
+	}
+
+.ordering{
+	display: flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+.services-info__item--content{
+	margin-top: 3.5rem;
+	margin-left:8rem;
+}	
+
+@media (max-width: 940px){
+	.services-info{
+		padding:8% 0;
+	}
+		}

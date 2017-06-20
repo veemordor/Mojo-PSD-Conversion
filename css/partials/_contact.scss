@@ -1,0 +1,26 @@
+section.contact{
+	width: 100%;
+	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../assets/mojo-contact.jpg);
+	background-size: cover;
+	text-align:center;
+		.headline h2, h3{
+		@include special-style($contrastColor);
+		&:after{
+			display: none;
+		}
+}
+section.contact-description{
+	p{@include special-style($contrastColor);margin-bottom:6rem;}
+	button.btn.btn__clear{margin-bottom:16.5rem;}	}
+}
+
+ul.logo{
+	display: flex;
+	flex-direction:row;
+	justify-content:center;
+	flex-wrap:wrap;
+	margin-bottom:1.2rem;
+	li.logo__item img{
+		max-width: 140px;
+	}
+}

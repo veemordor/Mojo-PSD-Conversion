@@ -1,0 +1,310 @@
+// mixins
+
+@mixin special-style($font-color){
+	color:$font-color;
+}
+
+@mixin header-style($font-family, $font-color, $font-size, $font-weight){
+	font-size:$font-size;
+	color:$font-color;
+	font-family: $font-family;
+	text-transform: uppercase;
+	font-weight: $font-weight;
+	margin: 0;
+}
+
+@mixin body-style($font-color, $font-size, $font-weight){
+	font-size:$font-size;
+	color:$font-color;
+	font-family:$bodyFont;
+	font-weight: $font-weight;
+	line-height: 2.4rem;
+	letter-spacing: .032rem;
+	margin: 0;
+}
+
+@mixin menu-style($font-color, $font-weight){
+	font-size:1rem;
+	color:$font-color;
+	font-family: $titleFont;
+	text-transform: uppercase;
+	font-weight: $font-weight;
+	margin: 0;
+}
+
+@mixin button-style($width, $height, $font-size, $border-color, $font-color){
+	width: $width;
+	height: $height;
+	font-size:$font-size;
+	background-color: rgba(255,255,255,0);
+	border-width: 2px;
+	border-style: solid;
+	border-color:$border-color;
+	color: $font-color;
+	text-transform: uppercase;
+	transition: all 0.2s;
+	transition-timing-function: ease-out;
+}
+
+@mixin button-style-social($font-color, $background-color){
+	width: 100%;
+	padding: 2rem calc(100% / 4);
+	color:$font-color;
+	background-color: $background-color;
+	border:none;
+	transition: all 0.2s;
+	transition-timing-function: ease-out;
+}
+
+@mixin fontSizer($scale) {
+	font-size: $scale * 1px;
+	font-size: ($scale / 10) * 1rem;
+}
+
+@mixin icon-font($font-family, $font-size, $font-color){
+	font-family:$font-family;
+	font-size: $font-size;
+	color:$font-color;
+	speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+// headers
+
+h1{
+	@include header-style($titleFont, $contrastColor, 2.3rem, 500);
+	letter-spacing:.2em;
+}
+h2{
+	@include header-style($titleFont, $boldColor, 2.5rem, 600);
+	letter-spacing:.04em;
+}
+
+h3{
+	@include header-style($bodyFont, $bodyFontColor, 1.3rem, 700);
+	letter-spacing:.598em;
+}
+
+h4{
+	@include header-style($titleFont, $boldColor, 1.4rem, 700);
+}
+h5{
+	@include header-style($bodyFont, $contrastColor, 1.3rem, 700);
+	letter-spacing:.026em;
+}
+
+// paragraphs
+
+p{
+	@include body-style($bodyFontColor, 1.6rem, 400);
+}
+
+h5 ~ p{
+	@include header-style($bodyFont, $contrastColor, 1.3rem, 400);
+	letter-spacing:.026rem;
+}
+
+// blockquotes
+
+blockquote{
+	@include body-style($bodyFontColor, 1.6rem, 400);margin:0;}
+q{
+	@include body-style($boldColor, 2rem, 700);margin:0;}
+
+// links
+
+.header-nav ul.menu a {@include menu-style($contrastColor, 400);position:relative;transition: all .5s ease;}
+.header-nav ul.menu a:hover{@include menu-style($boldColor, 400);}
+
+
+ul.menu.project-menu a {
+	@include menu-style($bodyFontColor, 700);
+	@media (max-width: 940px) {
+		@include fontSizer(16)
+	}
+}	
+	
+
+ul.menu.project-menu a:hover{
+	@include menu-style($boldColor, 700);
+	@media (max-width: 940px) {
+		@include fontSizer(16)
+	}
+}
+
+li.menu__link a, li.menu__link.menu__link--active a{display: inline-block;}
+
+li.gallery__cell.gallery__cell--portrait a{
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			margin:2px;
+			padding: calc(35px / 3);
+			border:2px solid $contrastColor;
+			transition: all .2s;
+		}
+
+li.gallery__cell.gallery__cell--portrait a:hover{
+	display: inline-block;
+	margin:2px;
+	padding: calc(35px / 3);
+	color: $boldColor;
+	border:2px solid $paleColor;
+	background-color: $paleColor;
+}
+
+li.hidden-gallery_link a{
+		display: inline-block;
+		color: $paleColor;
+}
+
+// lists
+
+ul.bullet-list{
+	@include fontSizer(16);
+	line-height:3rem;
+	li.bullet-list__item:before{
+		content:"\eb1b";
+		color:$boldColor;
+		font-family:'IcoFont' !important;
+	}
+}
+
+// icons
+
+i.icofont{
+	@include icon-font(IcoFont, 4rem, $boldColor)
+}
+i.icofont {
+	font-family: 'IcoFont' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+ul.footer-info i.icofont, .iconographic__item i.icofont{@include icon-font(IcoFont, 3rem, $contrastColor);}
+
+i.fa{@include fontSizer(15);}
+
+// SECTIONS
+// header
+
+.header-info h2{
+	@include header-style($titleFont, $contrastColor, 3.6rem, 400);
+	letter-spacing:.3em;
+	@media (max-width: 480px){
+		@include header-style($titleFont, $contrastColor, 1.6rem, 600);
+		letter-spacing:.1em;
+	}
+}
+.header-info h3{@include header-style($titleFont, $contrastColor, 1.3rem, 400);letter-spacing:.3em;
+	@media (max-width: 480px){
+		@include header-style($titleFont, $contrastColor, 1rem, 400);letter-spacing:.1em;
+	}
+}
+
+p.mojo-m {@include header-style($titleFont, $contrastColor, 2.3rem, 500);letter-spacing:.2em;}
+
+// features
+
+.feature p{@include fontSizer(15);}
+.about-secondary p{
+	@include body-style($boldColor, 1.6rem, 800);
+	&::first-line{
+		text-decoration: underline;
+	}
+	@media (max-width: 768px){
+		@include body-style($boldColor, 1.8rem, 800)
+	}
+
+}
+.numeral{@include fontSizer(73); color:$backgroundColor;font-weight: 400;margin:0;display:inline-block;}
+
+// stats
+
+.stats i.icofont{
+	@media (max-width: 768px){
+		text-align:left;
+	}
+}
+
+.stats h4{
+	@include header-style($bodyFont, $contrastColor,2.5rem, 400);
+	@media (max-width: 768px){
+		text-align:center;
+	}
+}
+.stats p{
+	@include header-style($bodyFont, $contrastColor, 1.3rem, 400);
+	@media (max-width: 768px){
+		text-align:center;
+	}
+}
+
+// footer
+
+footer ul.footer-info h4{@include header-style($titleFont, $contrastColor, 1.4rem, 400);letter-spacing:.598em;line-height: 3em;
+	p{
+		@include body-style($bodyFontColor, 1.6rem, 400);
+	}
+}
+
+
+
+
+
+// galleries
+figure a {@include menu-style($contrastColor, 700);}
+figcaption i.icofont{@include icon-font(IcoFont, 1.8rem, $contrastColor);}
+
+// buttons
+button.btn{margin:2.8rem 0;}
+
+button.btn.btn__clear{@include button-style(145px, 45px, 1.3rem, $contrastColor, $contrastColor);
+	@media (max-width: 480px){
+		@include button-style(110px, 35px, 1.3rem, $contrastColor, $contrastColor);
+	}
+}
+button.btn.btn__clear:hover{@include button-style(145px, 45px, 1.3rem,$contrastColor, rgba(0,0,0,0.9));background-color: $contrastColor;box-shadow: -3px 3px 5px rgba(0,0,0,0.4);
+	@media (max-width: 480px){
+		@include button-style(110px, 35px, 1.3rem,$contrastColor, rgba(0,0,0,0.9));background-color: $contrastColor;box-shadow: -3px 3px 5px rgba(0,0,0,0.4);
+	}
+}
+
+button.btn.btn__solid{@include button-style(145px, 45px, 1.3rem, $bodyFontColor, $bodyFontColor);
+	@media (max-width: 480px){
+		@include button-style(110px, 35px, 1.3rem, $bodyFontColor, $bodyFontColor);
+	}
+}
+button.btn.btn__solid:hover{@include button-style(145px, 45px, 1.3rem, $bodyFontColor, $bodyFontColor);background-color: $paleColor;border-color:$bodyFontColor;box-shadow: -5px 5px 5px $backgroundColor;
+	@media (max-width: 480px){
+		@include button-style(110px, 35px, 1.3rem, $bodyFontColor, $bodyFontColor);background-color: $paleColor;border-color:$bodyFontColor;box-shadow: -5px 5px 5px $backgroundColor;
+	}
+}
+
+
+
+button.social.fb{@include button-style-social($contrastColor, $facebookColor);}
+button.social.tw{@include button-style-social($contrastColor,$twitterColor);}
+button.social.goop{@include button-style-social($contrastColor,$googlePlusColor);}
+button.social.pin{@include button-style-social($contrastColor,$pinterestColor);}
+button.social:hover{border:2px inset $footerColor;}
+
+button i.fa{@include special-style($contrastColor); font-size:2.5rem;transition: all 0.2s;
+	transition-timing-function: ease-out;}
+button i.fa:hover{}
+
+
+
+
+
+
